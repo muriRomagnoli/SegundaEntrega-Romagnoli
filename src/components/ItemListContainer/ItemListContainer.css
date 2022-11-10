@@ -1,5 +1,7 @@
-h3{
-    color: rgb(194, 229, 227);
-    text-align: center;
-
+.tituloMain{
+    background-color: #F2F5FA;
+    font-style: normal;
+    border-top: 5px solid #CED2DC;
+    border-bottom: 5px solid #CED2DC;
+    padding: 10px 0px;
 }
