@@ -1,0 +1,9 @@
+.cartContent {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cartTitle {
+    padding: 1.2em 0;
+}

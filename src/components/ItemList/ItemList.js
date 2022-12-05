@@ -1,17 +1,10 @@
-import './ItemList.css'
 import Item from '../Item/Item'
+import { memo } from 'react'
+import './ItemList.css'
 
-const ItemList = ({ products }) => {
-    return (
-
-        <div className="row justify-content-around align-middle">
-            {products.map(product => (
-                <Item key={product.id} product={product} />
-            )
-            )}
-        </div>
-
-    )
+const ItemList = ({ items }) => {
+    return <ul className='itemsContainer'>{items.map(item => <li key={item.id}><Item {...item} /></li>)}</ul>
 }
 
-export default ItemList
+
+export default memo(ItemList)

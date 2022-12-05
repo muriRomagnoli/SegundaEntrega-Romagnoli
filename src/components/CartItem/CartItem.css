@@ -1,0 +1,42 @@
+.cartItemCard {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid black;
+    padding: 2em 0;
+    margin: 2em 0;
+}
+
+
+.cartImgItem {
+    width: 18%;
+}
+
+.cartImgItem img {
+    width: 35%;
+}
+
+.cartTitleItem {
+    width: 22%;
+}
+
+.cartQuantityItem {
+    width: 15%;
+}
+
+.cartPriceItem {
+    width: 15%;
+}
+
+.cartTotalItem {
+    width: 15%;
+}
+
+.cartRemoveItem {
+    width: 5%;
+}
+
+#bin:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}

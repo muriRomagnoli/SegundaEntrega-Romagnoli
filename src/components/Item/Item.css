@@ -1,0 +1,21 @@
+.itemCard{
+    height: 25em;
+    width: 30em;
+    text-align: center;
+    padding: 1em;
+    border-radius: 6px;
+    margin: 3em 0;
+}
+
+.itemCard img {
+    width: 9em;
+    padding: 1.5em 0;
+}
+
+.itemCard:hover {
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+.itemCard h5 {
+    padding: 0.8em 0;
+}

@@ -1,22 +1,37 @@
-import { useState, useEffect } from "react";
-import { getProduct } from "../../asyncMock";
-import { useParams } from "react-router-dom";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import ItemDetail from '../ItemDetail/ItemDetail'
+import './ItemDetailContainer.css'
+import { getItemsById } from '../../services/firebase/firestore'
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({})
-    const { id } = useParams()
-
+    const { itemId } = useParams()
+    const [item, setItem] = useState({})
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        getProduct(id).then(product => {
-            setProduct(product)
+        setLoading(true)
+        getItemsById(itemId).then(item => {
+            setItem(item)
+        }).catch(err => {
+            console.log(err)
+        }).finally(() => {
+            setLoading(false)
         })
-    }, [])
 
+    }, [itemId])
+
+
+    if (loading) {
+        return <h2 id="detailContainerTitle">Aguarde mientras carga su producto...</h2>
+    }
     return (
-        <ItemDetail product={product} />
+        <div>
+            <ItemDetail {...item} />
+        </div>
     )
+
+
 }
 
 export default ItemDetailContainer

@@ -1,12 +1,15 @@
-import cart from './assets/carrito.png'
+import cart from './assets/cart-shopping-solid.svg'
+import './CartWidget.css'
+import { Link } from 'react-router-dom'
+import { useCart } from '../../context/CartContext'
 
 const CartWidget = () => {
-    return (
-        <div className='me-lg-5 me-sm-1'>
-            <button className='btn btn-secondary'><img src={cart} style={{ height: 35 }} alt='cart' /> 1 </button>
 
-        </div>
+    const { totalQuantity } = useCart()
+
+    return (
+        <div className='cartContainer'><Link id="cart" to='/cart'><img src={cart} alt='cart' />{totalQuantity}</Link></div>
     )
 }
 
-export default CartWidget
+export default CartWidget;

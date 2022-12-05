@@ -1,0 +1,10 @@
+input {
+    width: 20px;
+}
+
+.countContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 20em;
+    margin: 0 auto;
+}
